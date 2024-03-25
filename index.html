@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VP3D: Unleashing 2D Visual Prompt for Text-to-3D Generation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VP3D: Unleashing 2D Visual Prompt for Text-to-3D Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/result.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">VP3D: Unleashing 2D Visual Prompt for Text-to-3D Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Yang Chen,</span>
+            <span class="author-block">
+              Yingwei Pan,</span>
+            <span class="author-block">
+              Haibo Yang,
+            </span>
+            <span class="author-block">
+              Ting Yao,
+            </span>
+            <span class="author-block">
+              Tao Mei
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">HiDream.ai Inc.  </span>
+            <br/>
+            <span class="author-block">Fudan University</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span style="font-weight: bold;">CVPR 2024</span>
+          </div>
+
+          </div>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <span class="link-block">
+              <a href=""
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href=""
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                </span>
+                <span>ArXiv</span>
+              </a>
+            </span>
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href=""
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Supp_material</span>
+              </a>
+            </span>
+            <!-- Code Link.
+            <span class="link-block">
+              <a href="https://github.com/Gorilla-Lab-SCUT/Fantasia3D"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+            </span> -->
+          </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="my-hr">
+  <hr>
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent innovations on text-to-3D generation have featured Score Distillation Sampling (SDS), which enables the
+            zero-shot learning of implicit 3D models (NeRF) by directly
+            distilling prior knowledge from 2D diffusion models. However, current SDS-based models still struggle with intricate
+            text prompts and commonly result in distorted 3D models
+            with unrealistic textures or cross-view inconsistency issues.
+            In this work, we introduce a novel Visual Prompt-guided
+            text-to-3D diffusion model (VP3D) that explicitly unleashes
+            the visual appearance knowledge in 2D visual prompt to
+            boost text-to-3D generation. Instead of solely supervising
+            SDS with text prompt, VP3D first capitalizes on 2D diffusion model to generate a high-quality image from input text,
+            which subsequently acts as visual prompt to strengthen SDS
+            optimization with explicit visual appearance. Meanwhile,
+            we couple the SDS optimization with additional differentiable reward function that encourages rendering images of
+            3D models to better visually align with 2D visual prompt
+            and semantically match with text prompt. Through extensive experiments, we show that the 2D Visual Prompt in
+            our VP3D significantly eases the learning of visual appearance of 3D models and thus leads to higher visual fidelity
+            with more detailed textures. It is also appealing in view
+            that when replacing the self-generating visual prompt with
+            a given reference image, VP3D is able to trigger a new task
+            of stylized text-to-3D generation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+
+    <!-- abstract -->
+    <!-- results (videos) -->
+    <p class="title is-3 mt-5 has-text-centered"> Comparisons with SOTA text-to-3D generation methods</p>
+    <video muted autoplay controls loop> <source src="static/videos/A florist is making a bouquet with fresh flowers.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A scientist is examining a specimen under a microscope.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A boy is flying a colorful kite in the sky.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A fisherman is throwing the fishing rod in the sea.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A gardener is watering plants with a hose.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/An artist is painting on a blank canvas.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A chessboard is set up, the king and queen standing in opposition.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A dripping paintbrush stands poised above a half-finished canvas.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/An old brass key longs for the dusted antique chest it could unlock.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/An old brass key sits next to an intricate, dust-covered lock.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/Two silken, colorful scarves are knotted together.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/Two worn paddles rest next to an overturned canoe.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A castle-shaped sandcastle.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A cherry red vintage lipstick tube.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A fluffy, orange cat.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A fuzzy pink flamingo lawn ornament.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A paint-splattered easel.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A lighthouse on a rocky shore.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A rustic wrought-iron candle holder.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A worn-out rubber tire swing.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/An intricately-carved wooden chess set.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A half-eaten sandwich sits next to a lukewarm thermos.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A chef is making pizza dough in the kitchen.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/Hot popcorn jump out from the red striped popcorn maker.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A blue denim jacket hanging on a metal coat rack.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A brown horse in a green pasture.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A_golden_retriever_with_a_blue_bowtie.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/A hot air balloon in a clear sky.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    
+    <p class="title is-3 mt-5 has-text-centered"> Stylized text-to-3D generation results of our VP3D</p>
+    <video muted autoplay controls loop> <source src="static/videos/stylized.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/stylized_mix_1.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+    <video muted autoplay controls loop> <source src="static/videos/stylized_mix_2.mp4" type="video/mp4"> </video>
+    <br />
+    <br />
+
+
+    <!-- Concurrent Work. -->
+
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@InProceedings{Yang2024VP3D,
+  author    = {Yang Chen and Yingwei Pan and Haibo Yang and Ting Yao and Tao Mei},
+  title     = {VP3D: Unleashing 2D Visual Prompt for Text-to-3D Generation},
+  booktitle = {CVPR},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <!-- <div class="column is-8"> -->
+        <div class="content">
+          <p>
+            This website is constructed using the source code provided by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, 
+            allow us to express our appreciation for their contribution.                              
+          </p>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
